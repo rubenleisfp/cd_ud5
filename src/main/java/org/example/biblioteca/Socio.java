@@ -1,5 +1,8 @@
 package org.example.biblioteca;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Socio {
     private String dni;
     private String nombre;
