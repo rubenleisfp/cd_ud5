@@ -1,0 +1,54 @@
+<mxfile host="app.diagrams.net" modified="2026-11-03T16:17:00.000Z" agent="ChatGPT" version="25.0.3" type="device">
+  <diagram id="patasana-uml" name="PataSana - Diagrama de clases">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="650" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="cliente" value="&lt;b&gt;Cliente&lt;/b&gt;&lt;hr&gt;- dni : String&lt;br&gt;- nombre : String&lt;br&gt;- telefono : String" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="50" y="190" width="210" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="veterinario" value="&lt;b&gt;Veterinario&lt;/b&gt;&lt;hr&gt;- numeroColegiado : String&lt;br&gt;- nombre : String&lt;br&gt;- especialidad : String" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="50" y="40" width="230" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="mascota" value="&lt;b&gt;&lt;i&gt;Mascota&lt;/i&gt;&lt;/b&gt;&lt;hr&gt;- nombre : String&lt;br&gt;- fechaNacimiento : Date&lt;hr&gt;{abstract} + emitirSonido() : void" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="380" y="170" width="250" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="perro" value="&lt;b&gt;Perro&lt;/b&gt;&lt;hr&gt;- raza : String&lt;br&gt;- numeroChip : String&lt;hr&gt;+ emitirSonido() : void" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="730" y="50" width="230" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="gato" value="&lt;b&gt;Gato&lt;/b&gt;&lt;hr&gt;- esDeInterior : boolean&lt;hr&gt;+ emitirSonido() : void" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="730" y="300" width="230" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel-cliente-mascota" value="tiene" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeWidth=1.5;fontSize=12;" edge="1" parent="1" source="cliente" target="mascota">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-cliente" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-cliente-mascota">
+          <mxGeometry x="-0.8" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="-12" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult-mascota" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rel-cliente-mascota">
+          <mxGeometry x="0.8" y="0" relative="1" as="geometry">
+            <mxPoint x="0" y="-12" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="herencia-perro" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;startArrow=none;strokeWidth=1.5;" edge="1" parent="1" source="perro" target="mascota">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="120"/>
+              <mxPoint x="680" y="240"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="herencia-gato" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;startArrow=none;strokeWidth=1.5;" edge="1" parent="1" source="gato" target="mascota">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="360"/>
+              <mxPoint x="680" y="270"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

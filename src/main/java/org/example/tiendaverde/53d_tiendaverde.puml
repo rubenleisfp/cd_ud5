@@ -1,0 +1,24 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Producto {
+    - nombre : String
+    - precio : double
+    - stock : int
+    + getPrecio() : double
+    + setPrecio(precio : double) : void
+    - descripcion() : String
+}
+
+class ProductoPerecedero {
+    - fechaCaducidad : Date
+}
+
+class ProductoEcologico {
+    - codigoCertificacion : String
+}
+
+ProductoPerecedero --|> Producto
+ProductoEcologico --|> Producto
+
+@enduml

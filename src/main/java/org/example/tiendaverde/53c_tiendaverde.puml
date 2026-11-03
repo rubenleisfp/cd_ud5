@@ -1,0 +1,13 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Producto {
+    - nombre : String
+    - precio : double
+    - stock : int
+    + getPrecio() : double
+    + setPrecio(precio : double) : void
+    - descripcion() : String
+}
+
+@enduml

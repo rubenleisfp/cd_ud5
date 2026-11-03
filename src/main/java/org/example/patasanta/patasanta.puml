@@ -1,0 +1,39 @@
+
+@startuml
+skinparam classAttributeIconSize 0
+
+class Cliente {
+    - dni : String
+    - nombre : String
+    - telefono : String
+}
+
+class Veterinario {
+    - numeroColegiado : String
+    - nombre : String
+    - especialidad : String
+}
+
+abstract class Mascota {
+    - nombre : String
+    - fechaNacimiento : Date
+    {abstract} + emitirSonido() : void
+}
+
+class Perro {
+    - raza : String
+    - numeroChip : String
+    + emitirSonido() : void
+}
+
+class Gato {
+    - esDeInterior : boolean
+    + emitirSonido() : void
+}
+
+Cliente "1" -- "1..*" Mascota : tiene
+
+Mascota <|-- Perro
+Mascota <|-- Gato
+
+@enduml
