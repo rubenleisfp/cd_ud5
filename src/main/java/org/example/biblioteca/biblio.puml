@@ -1,0 +1,44 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+class org.example.biblioteca.Prestamo {
+- String fechaPrestamo
+- String fechaDevolucion
+- Socio socio
+- Libro libro
++ String getFechaPrestamo()
++ String getFechaDevolucion()
++ void setFechaDevolucion(String)
++ Socio getSocio()
++ Libro getLibro()
+}
+
+
+class org.example.biblioteca.Libro {
+- String isbn
+- String titulo
+- List<Prestamo> prestamos
++ String getIsbn()
++ String getTitulo()
++ List<Prestamo> getPrestamos()
++ void agregarPrestamo(Prestamo)
++ boolean estaDisponible()
+}
+
+
+class org.example.biblioteca.Socio {
+- String dni
+- String nombre
+- List<Prestamo> prestamos
++ String getDni()
++ String getNombre()
++ List<Prestamo> getPrestamos()
++ void agregarPrestamo(Prestamo)
+}
+
+
+class org.example.biblioteca.Main {
++ {static} void main(String[])
+}
+
+@enduml
